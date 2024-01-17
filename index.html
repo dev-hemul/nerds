@@ -5,80 +5,89 @@
     <title>Дизайн-студия Nerds</title>
     <link rel="stylesheet" href="сss/normalize.css">
     <link rel="stylesheet" href="сss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="main-header">
-    <a href="#">
-        <img src="img/index-logo.svg" width="160" height="65" alt="Логотип компании Nerds">
-    </a>
-    <nav class="site-navigation">
-        <ul class="main-navigation">
-            <li class="navigation-item">
-                <a href="#">Студия</a>
-            </li>
-            <li class="navigation-item">
-                <a href="#">Клиенты</a>
-            </li>
-            <li class="navigation-item">
-                <a href="catalog.html">Магазин</a>
-            </li>
-            <li class="navigation-item">
-                <a href="#">Контакты</a>
-            </li>
-        </ul>
-        <ul class="user-navigation">
-            <li>
-                <a href="">Корзина</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="container">
+        <nav class="site-navigation">
+            <a class="main-header-logo" href="#">
+                <img src="img/index-logo.svg" width="160" height="65" alt="Логотип компании Nerds">
+            </a>
+            <ul class="main-navigation">
+                <li class="navigation-item">
+                    <a href="#">Студия</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#">Клиенты</a>
+                </li>
+                <li class="navigation-item navigation-item-current">
+                    <a href="catalog.html">Магазин</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+            <ul class="user-navigation">
+                <li>
+                    <a href="">Корзина</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <h1>Дизайн-студия Nerds</h1>
-    <section class="block-hero-1">
-        <p>Долго, дорого <br> скрупулезно.</p>
-        <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-        <a href="#">Узнать больше</a>
-        <img src="img/slide1.png" alt="Фото с изображением разработки на телефоне ">
-    </section>
-    <section class="block-hero-2">
-        <p>Любим математику <br> как никто другой</p>
-        <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
-        <a href="#">Узнать больше</a>
-        <img src="img/slide2.png" alt="Фото с изображением разработки на ПК">
-    </section>
-    <section class="block-hero-3">
-        <p>Только ночь, <br> только хардкор</p>
-        <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
-        <a href="#">Узнать больше</a>
-        <img src="img/slide3.png" alt="Фото с изображением разработки на планшете">
-    </section>
+    <h1 class="visually-hidden">Дизайн-студия Nerds</h1>
+    <div class="slider">
+        <div class="container">
+            <section class="block-hero-1">
+                <p>Долго, дорого <br> скрупулезно.</p>
+                <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
+                <a class="button" href="#">Узнать больше</a>
+                <img src="img/slide1.png" alt="Фото с изображением разработки на телефоне ">
+            </section>
+            <section class="block-hero-2">
+                <p>Любим математику <br> как никто другой</p>
+                <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
+                <a class="button" href="#">Узнать больше</a>
+                <img src="img/slide2.png" alt="Фото с изображением разработки на ПК">
+            </section>
+            <section class="block-hero-3">
+                <p>Только ночь, <br> только хардкор</p>
+                <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
+                <a class="button" href="#">Узнать больше</a>
+                <img src="img/slide3.png" alt="Фото с изображением разработки на планшете">
+            </section>
+        </div>
+    </div>
 
-    <section class="services">
+    <section class="services container">
         <h2 class="visually-hidden">Наши услуги</h2>
         <ul class="services-list">
             <li class="services-item">
                 <h2>Веб-сайты</h2>
                 <img src="img/illustration-1.jpg" alt="Изображение с разработкой сайта">
                 <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
-                <button type="submit">Заказать</button>
+                <button class="button" type="submit">Заказать</button>
             </li>
             <li class="services-item">
                 <h2>Приложения</h2>
                 <img src="img/illustration-2.jpg" alt="Изображение с разработкой приложения">
                 <p>Покорите топ-10 приложений в AppStore и Google Play</p>
-                <button type="submit">Заказать</button>
+                <button class="button" type="submit">Заказать</button>
             </li>
             <li class="services-item">
                 <h2>Презентации</h2>
                 <img src="img/illustration-3.jpg" alt="Изображение с разработкой презентаций">
                 <p>Вы даже не подозреваете, насколько вы изумительны!</p>
-                <button type="submit">Заказать</button>
+                <button class="button" type="submit">Заказать</button>
             </li>
         </ul>
     </section>
-    <section class="about-us">
+    <section class="about-us container">
         <h2 class="visually-hidden">Про нас:</h2>
         <b>Мы — маленькая, но гордая <br> дизайн-студия из Краснодара.</b>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не
@@ -101,7 +110,7 @@
         </dl>
     </section>
 
-    <section class="our-works">
+    <section class="our-works container">
         <h2 class="visually-hidden">Наши работы</h2>
         <ul class="our-works-list">
             <li>
@@ -128,16 +137,18 @@
     </section>
 
     <section class="contacts">
-        <img src="#" alt="Наш адрес Сакт-петербург, ул. Б. Конюшенная д. 19/8">
-        <b>Nёrds Design Studio</b>
-        <p>191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
-        <span>тел.</span>
-        <a href="tel:78122757575">+7 (812) 275-75-75</a>
-        <button type="submit">Напишите нам</button>
+        <div class="container">
+            <img src="#" alt="Наш адрес Сакт-петербург, ул. Б. Конюшенная д. 19/8">
+            <b>Nёrds Design Studio</b>
+            <p>191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+            <span>тел.</span>
+            <a href="tel:78122757575">+7 (812) 275-75-75</a>
+            <button class="button" type="submit">Напишите нам</button>
+        </div>
     </section>
 </main>
 
-<footer class="main-footer">
+<footer class="main-footer container">
     <ul class="social-list">
         <li class="social-item">
             <a href="https://vk.com">
@@ -168,7 +179,7 @@
         <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
         <label for="text">Текст письма:</label>
         <textarea id="text" placeholder="В свободной форме" required></textarea>
-        <button type="submit">Отправить</button>
+        <button class="button" type="submit">Отправить</button>
     </form>
 </section>
 
