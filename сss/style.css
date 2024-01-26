@@ -47,8 +47,8 @@ a {
 }
 
 img {
-max-width: 100%;
-height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .button {
@@ -111,6 +111,7 @@ height: auto;
 }
 
 .user-navigation {
+    position: relative;
     width: 145px;
     margin: 0;
     padding: 0;
@@ -118,7 +119,20 @@ height: auto;
     list-style: none;
 }
 
+.user-navigation li:before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    left: 30px;
+    background-image: url("../img/busket.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
 .user-navigation a {
+    padding-left: 70px;
     font-size: 16px;
     line-height: 30px;
     font-weight: 500;
@@ -258,7 +272,7 @@ height: auto;
 }
 
 .services-item:first-child button:active {
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
     background-color: #d7373b;
 }
 
@@ -271,7 +285,7 @@ height: auto;
 }
 
 .services-item:nth-child(2) button:active {
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
     background-color: #00aa62;
 }
 
@@ -284,7 +298,7 @@ height: auto;
 }
 
 .services-item:nth-child(3) button:active {
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
     background-color: #e5a722;
 }
 
@@ -512,12 +526,17 @@ height: auto;
 }
 
 .contacts-info button:hover {
-   background-color: #e74246;
+    background-color: #e74246;
 }
 
 .contacts-info button:active {
-   color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
     background-color: #d7373b;
+}
+
+.social-wrapper {
+    display: flex;
+
 }
 
 .social-list {
@@ -531,6 +550,28 @@ height: auto;
 
 .social-item {
     margin-right: 12px;
+}
+
+.social-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px;
+    height: 78px;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+}
+
+.social-item a:hover {
+    background-color: #e74246;
+}
+
+.social-item a:active {
+    background-color: #d7373b;
+}
+
+.social-item a:active img {
+    opacity: 0.3;
 }
 
 .slogan {
