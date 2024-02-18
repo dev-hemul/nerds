@@ -48,7 +48,7 @@
     <div class="container inner-wrapper">
         <section class="container main-filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
-            <form class="main-form" action="https://echo.htmlcacademy.ru" method="post">
+            <form class="main-form" action="https://echo.htmlacademy.ru" method="post">
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Стоимость:</legend>
                     <ul>
@@ -75,16 +75,16 @@
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="radio" name="product-group" value="fix">
-                            <span class="radio"></span>
-                            Фиксированная
+                                <input class="check-input" type="radio" name="product-group" value="fix">
+                                <span class="radio"></span>
+                                Фиксированная
                             </label>
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="radio" name="product-group" value="rubber">
-                            <span class="radio"></span>
-                            Резиновая
+                                <input class="check-input" type="radio" name="product-group" value="rubber">
+                                <span class="radio"></span>
+                                Резиновая
                             </label>
                         </li>
                     </ul>
@@ -101,29 +101,29 @@
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="checkbox" name="advantages">
+                                <input class="check-input" type="checkbox" name="advantages">
                                 <span class="checkbox"></span>
                                 Блок преимуществ
                             </label>
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="checkbox" name="news"  checked>
+                                <input class="check-input" type="checkbox" name="news" checked>
                                 <span class="checkbox"></span>
                                 Новости
                             </label>
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="checkbox" name="gallery">
+                                <input class="check-input" type="checkbox" name="gallery">
                                 <span class="checkbox"></span>
                                 Галерея
                             </label>
                         </li>
                         <li class="filter-option">
                             <label>
-                            <input class="check-input" type="checkbox" name="shopping-cart">
-                            <span class="checkbox"></span>
+                                <input class="check-input" type="checkbox" name="shopping-cart">
+                                <span class="checkbox"></span>
                                 Корзина
                             </label>
                         </li>
@@ -225,6 +225,25 @@
         </li>
     </ul>
 
+    <section class="contacts">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603625719817!2d30.32047247732077!3d59.938719162093584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2spl!4v1705784965551!5m2!1sru!2spl"
+                width="1920" height="418" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <img src="img/map-google.png" width="1899" height="710"
+             alt="Дизайн-студия NЁRDS расположена по адресу г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+        <div class="container">
+            <div class="contacts-info">
+                <b>Nёrds Design Studio</b>
+                <p class="contacts-text">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+                <p class="contacts-tel">
+                    <span>тел.</span>
+                    <a href="tel:78122757575">+7 (812) 275-75-75</a>
+                </p>
+                <button class="button form-button" type="submit">Напишите нам</button>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <footer class="main-footer container">
@@ -256,16 +275,35 @@
 
 <section class="write-us">
     <h2>Напишите нам</h2>
-    <form action="https://echo.htmlcacademy.ru" method="post">
-        <label for="name">Ваше имя:</label>
-        <input type="text" name="name" id="name" placeholder="Имя и Фамилия" required>
-        <label for="e-mail">Ваш e-mail:</label>
-        <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
+    <form class="contacts-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="modal-contacts-row">
+            <p>
+                <label for="name">Ваше имя:</label>
+                <input type="text" name="name" id="name" placeholder="Имя и Фамилия" required>
+            </p>
+            <p>
+            <label for="e-mail">Ваш e-mail:</label>
+            <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
+            </p>
+        </div>
         <label for="text">Текст письма:</label>
-        <textarea id="text" placeholder="В свободной форме" required></textarea>
+        <textarea rows="6" id="text" placeholder="В свободной форме" required></textarea>
         <button class="button" type="submit">Отправить</button>
     </form>
+    <button class="modal-close" type="button">Закрыть</button>
 </section>
 
+<script>
+  let form = document.querySelector(".form-button");
+  let writeus = document.querySelector(".write-us");
+  let modalclose =document.querySelector(".modal-close")
+  form.addEventListener("click", function () {
+    writeus.style.display = 'block';
+  })
+
+  modalclose.addEventListener("click", function () {
+    writeus.style.display = 'none';
+  })
+</script>
 </body>
 </html>

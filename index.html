@@ -169,7 +169,7 @@
                     <span>тел.</span>
                     <a href="tel:78122757575">+7 (812) 275-75-75</a>
                 </p>
-                <button class="button" type="submit">Напишите нам</button>
+                <button class="button form-button" type="submit">Напишите нам</button>
             </div>
         </div>
     </section>
@@ -204,17 +204,35 @@
 
 <section class="write-us">
     <h2>Напишите нам</h2>
-    <form action="https://echo.htmlcacademy.ru" method="post">
-        <label for="name">Ваше имя:</label>
-        <input type="text" name="name" id="name" placeholder="Имя и Фамилия" required>
-        <label for="e-mail">Ваш e-mail:</label>
-        <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
+    <form class="contacts-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="modal-contacts-row">
+            <p>
+                <label for="name">Ваше имя:</label>
+                <input type="text" name="name" id="name" placeholder="Имя и Фамилия" required>
+            </p>
+            <p>
+            <label for="e-mail">Ваш e-mail:</label>
+            <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
+            </p>
+        </div>
         <label for="text">Текст письма:</label>
-        <textarea id="text" placeholder="В свободной форме" required></textarea>
+        <textarea rows="6" id="text" placeholder="В свободной форме" required></textarea>
         <button class="button" type="submit">Отправить</button>
     </form>
+    <button class="modal-close" type="button">Закрыть</button>
 </section>
 
+<script>
+  let form = document.querySelector(".form-button");
+  let writeus = document.querySelector(".write-us");
+  let modalclose =document.querySelector(".modal-close")
+  form.addEventListener("click", function () {
+    writeus.style.display = 'block';
+  })
 
+  modalclose.addEventListener("click", function () {
+    writeus.style.display = 'none';
+  })
+</script>
 </body>
 </html>
