@@ -46,21 +46,30 @@
         </div>
     </div>
     <div class="container inner-wrapper">
-        <section class="container main-filters">
+        <section class="main-filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
             <form class="main-form" action="https://echo.htmlacademy.ru" method="post">
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Стоимость:</legend>
-                    <ul>
-                        <li>
-                            <label for="in">От</label>
-                            <input type="number" name="in" id="in" min="0">
-                        </li>
-                        <li>
-                            <label for="out">До</label>
-                            <input type="number" name="out" id="out" max="30000">
-                        </li>
-                    </ul>
+                    <div class="range-control">
+                        <div class="progress">
+                            <div class="current-progress"></div>
+                            <button class="price-filter__range-handle price-filter__range-handle--min" type="button"
+                                    aria-label="Минимально"></button>
+                            <button class="price-filter__range-handle price-filter__range-handle--max" type="button"
+                                    aria-label="Максимально"></button>
+                        </div>
+                    </div>
+                    <p class="range-display">
+                        <label>
+                            ОТ
+                            <input type="text" name="in" min="0" value="0">
+                        </label>
+                        <label>
+                            ДО
+                            <input type="text" name="out" max="30000" value="15000">
+                        </label>
+                    </p>
                 </fieldset>
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Сетка:</legend>
@@ -82,7 +91,7 @@
                         </li>
                         <li class="filter-option">
                             <label>
-                                <input class="check-input" type="radio" name="product-group" value="rubber">
+                                <input class="check-input" type="radio" name="product-group" value="rubber" disabled>
                                 <span class="radio"></span>
                                 Резиновая
                             </label>
@@ -122,7 +131,7 @@
                         </li>
                         <li class="filter-option">
                             <label>
-                                <input class="check-input" type="checkbox" name="shopping-cart">
+                                <input class="check-input" type="checkbox" name="shopping-cart" disabled>
                                 <span class="checkbox"></span>
                                 Корзина
                             </label>
@@ -132,99 +141,136 @@
                 <button class="button" type="submit">Показать</button>
             </form>
         </section>
-        <section class="container catalog">
+        <section class="catalog">
             <h2 class="visually-hidden">Каталог шаблонов</h2>
-            <b>Сортировать:</b>
-            <ul class="type-sorting-list">
-                <li>
-                    <a href="#">По цене</a>
-                </li>
-                <li>
-                    <a href="#">По типу</a>
-                </li>
-                <li>
-                    <a href="#">По названию</a>
-                </li>
-            </ul>
-            <ul class="direction-sorting-list">
-                <li>
-                    <a href="#">
-                        <span class="visually-hidden">По убыванию</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="visually-hidden">По возрастанию</span>
-                    </a>
-                </li>
-            </ul>
+            <div class="container-filter">
+                <b>Сортировать:</b>
+                <ul class="type-sorting-list">
+                    <li class="type-sorting-list-active">
+                        <a href="#">По цене</a>
+                    </li>
+                    <li>
+                        <a href="#">По типу</a>
+                    </li>
+                    <li>
+                        <a href="#">По названию</a>
+                    </li>
+                </ul>
+                <ul class="direction-sorting-list">
+                    <li>
+                        <a href="#">
+                            <span class="visually-hidden">По убыванию</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="visually-hidden">По возрастанию</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <ul class="catalog-list">
                 <li class="catalog-item">
                     <img src="img/sedona.jpg" width="360" height="576" alt="Фото проекта Sedona">
-                    <a href="#">
-                        <h3>Sedona</h3>
-                        <p>Информационный сайт для туристов</p>
-                        <button class="button" type="submit">9 900 руб.</button>
-                    </a>
+                    <div class="catalog-item-description">
+                        <div class="site-price">
+                            <a href="#">
+                                <h3>Sedona</h3>
+                            </a>
+                            <p>Информационный сайт для туристов</p>
+                            <a href="#" class="button" type="submit">9 900 руб.</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="catalog-item">
                     <img src="img/pink.jpg" width="360" height="576" alt="Фото проекта Pink">
                     <a href="#">
-                        <h3>Pink app</h3>
-                        <p>Продуктовый лендинг приложения для OS и Android</p>
-                        <button class="button" type="submit">9 900 руб.</button>
+                        <div class="catalog-item-description">
+                            <div class="site-price">
+                                <a href="#">
+                                    <h3>Pink app</h3>
+                                </a>
+                                <p>Продуктовый лендинг приложения для OS и Android</p>
+                                <a href="#" class="button" type="submit">9 900 руб.</a>
+                            </div>
+                        </div>
                     </a>
                 </li>
                 <li class="catalog-item">
                     <img src="img/barbershop.jpg" width="360" height="576" alt="Фото проекта borodinski">
                     <a href="#">
-                        <h3>Barbershop</h3>
-                        <p>Сайт салона красоты. Для мужчин, да.</p>
-                        <button class="button" type="submit">9 900 руб.</button>
+                        <div class="catalog-item-description">
+                            <div class="site-price">
+                                <a href="#">
+                                    <h3>Barbershop</h3>
+                                </a>
+                                <p>Сайт салона красоты. Для мужчин, да.</p>
+                                <a href="#" class="button" type="submit">9 900 руб.</a>
+                            </div>
+                        </div>
                     </a>
                 </li>
                 <li class="catalog-item">
                     <img src="img/mishka.jpg" width="360" height="576" alt="Фото проекта Mishka">
                     <a href="#">
-                        <h3>Mishka</h3>
-                        <p>Интернет-магазин вязаных игрушек</p>
-                        <button class="button" type="submit">9 900 руб.</button>
+                        <div class="catalog-item-description">
+                            <div class="site-price">
+                                <a href="#">
+                                    <h3>Mishka</h3>
+                                </a>
+                                <p>Интернет-магазин вязаных игрушек</p>
+                                <a href="#" class="button" type="submit">9 900 руб.</a>
+                            </div>
+                        </div>
                     </a>
                 </li>
                 <li class="catalog-item">
                     <img src="img/aplus.jpg" width="360" height="576" alt="Фото проекта apple">
                     <a href="#">
-                        <h3>A plus</h3>
-                        <p>Лендинг курсов повышения квалификации</p>
-                        <button class="button" type="submit">9 900 руб.</button>
+                        <div class="catalog-item-description">
+                            <div class="site-price">
+                                <a href="#">
+                                    <h3>A plus</h3>
+                                </a>
+                                <p>Лендинг курсов повышения квалификации</p>
+                                <a href="#" class="button" type="submit">9 900 руб.</a>
+                            </div>
+                        </div>
                     </a>
                 </li>
                 <li class="catalog-item">
                     <img src="img/kvast.jpg" width="360" height="576" alt="Фото проекта Kvast">
                     <a href="#">
-                        <h3>Кваст</h3>
-                        <p>Промо-сайт производителя крафтового пива</p>
-                        <button class="button" type="submit">9 900 руб.</button>
+                        <div class="catalog-item-description">
+                            <div class="site-price">
+                                <a href="#">
+                                    <h3>Кваст</h3>
+                                </a>
+                                <p>Промо-сайт производителя крафтового пива</p>
+                                <a href="#" class="button" type="submit">9 900 руб.</a>
+                            </div>
+                        </div>
                     </a>
                 </li>
             </ul>
         </section>
     </div>
-    <ul class="container pagination-list">
+    <div class="container">
+    <ul class="pagination-list">
         <li class="pagination-item">
-            <a class="current" href="#">1</a>
+            <a class="current">1</a>
         </li>
-        <li class="pagination-item ">
+        <li class="pagination-item">
             <a href="#">2</a>
         </li>
-        <li class="pagination-item ">
+        <li class="pagination-item">
             <a href="#">3</a>
         </li>
-        <li class="pagination-item ">
+        <li class="pagination-item">
             <a class="next-page button" href="#">Следующая</a>
         </li>
     </ul>
-
+    </div>
     <section class="contacts">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603625719817!2d30.32047247732077!3d59.938719162093584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2spl!4v1705784965551!5m2!1sru!2spl"
                 width="1920" height="418" style="border:0;" allowfullscreen="" loading="lazy"
@@ -282,8 +328,8 @@
                 <input type="text" name="name" id="name" placeholder="Имя и Фамилия" required>
             </p>
             <p>
-            <label for="e-mail">Ваш e-mail:</label>
-            <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
+                <label for="e-mail">Ваш e-mail:</label>
+                <input type="text" name="email" id="e-mail" placeholder="email@example.com" required>
             </p>
         </div>
         <label for="text">Текст письма:</label>
@@ -294,16 +340,16 @@
 </section>
 
 <script>
-  let form = document.querySelector(".form-button");
-  let writeus = document.querySelector(".write-us");
-  let modalclose =document.querySelector(".modal-close")
-  form.addEventListener("click", function () {
-    writeus.style.display = 'block';
-  })
+	let form = document.querySelector(".form-button");
+	let writeus = document.querySelector(".write-us");
+	let modalclose = document.querySelector(".modal-close")
+	form.addEventListener("click", function () {
+		writeus.style.display = 'block';
+	})
 
-  modalclose.addEventListener("click", function () {
-    writeus.style.display = 'none';
-  })
+	modalclose.addEventListener("click", function () {
+		writeus.style.display = 'none';
+	})
 </script>
 </body>
 </html>
