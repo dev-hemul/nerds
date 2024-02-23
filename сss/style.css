@@ -188,6 +188,23 @@ img {
     background-repeat: no-repeat;
 }
 
+.block-hero-1,
+.block-hero-2,
+.block-hero-3 {
+  display: none;
+}
+
+.slide-show {
+    display: block;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.down {
+    animation-name: down;
+}
+
 .sliders-control {
     display: flex;
     justify-content: space-between;
@@ -198,6 +215,7 @@ img {
 }
 
 .slider-controls__button {
+    position: relative;
     width: 18px;
     height: 18px;
     background-color: #ffffff;
@@ -205,7 +223,7 @@ img {
     border-radius: 50%;
 }
 
-.slider-controls__button::before {
+.slider-controls__button__active::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -215,6 +233,9 @@ img {
     height: 5px;
     border: 2px solid #c1c1c1;
     border-radius: 50%;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 .sliders-list {
@@ -224,7 +245,7 @@ img {
 }
 
 .slide {
-    width: 400px;
+    width: 515px;
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -241,6 +262,7 @@ img {
 }
 
 .slide p:nth-child(2) {
+    width: 440px;
     margin: 0;
     padding: 0;
     margin-bottom: 45px;
@@ -1068,7 +1090,6 @@ form .button:active {
 }
 
 .write-us {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1079,12 +1100,21 @@ form .button:active {
     z-index: 100;
     box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
     box-sizing: border-box;
+    animation-name: bounce-hide;
+    animation-duration: 1s;
 }
 
 .write-us-show {
     display: block;
     animation-name: bounce;
-    animation-duration: 0.6s;
+    animation-duration: 1s;
+
+}
+
+.write-us-hide {
+    display: none;
+    animation-name: bounce-hide;
+    animation-duration: 1s;
 }
 
 .write-us h2 {
@@ -1228,8 +1258,22 @@ form .button:active {
     to { left: 50%; }
   }
 
+@keyframes bounce-hide {
+    from {left: 50%;}
+    to { left: -200%;}
+  }
 
 
+@keyframes hide {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+/*@keyframes down {*/
+/*    30% {transform: translateY(-1000px);}*/
+/*    50% {transform: translateY(-500px);}*/
+/*    90% {transform: translateY(0);}*/
+/*}*/
 
 
 
