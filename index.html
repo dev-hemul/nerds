@@ -48,27 +48,33 @@
         <div class="slider">
             <div class="container">
                 <ul class="sliders-list">
-                    <li class="block-hero-1 slide">
+                    <li class="block-hero-1">
+                        <div class="slide">
                         <p>Долго, дорого, <br> скрупулезно.</p>
                         <p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
                         <a class="button" href="#">Узнать больше</a>
+                        </div>
                     </li>
-                    <li class="block-hero-2 slide">
+                    <li class="block-hero-2">
+                        <div class="slide">
                         <p>Любим математику <br> как никто другой</p>
                         <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
                         <a class="button" href="#">Узнать больше</a>
+                            </div>
                     </li>
-                    <li class="block-hero-3 slide">
+                    <li class="block-hero-3">
+                        <div class="slide">
                         <p>Только ночь, <br> только хардкор</p>
                         <p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
                         <a class="button" href="#">Узнать больше</a>
+                    </div>
                     </li>
                 </ul>
             </div>
             <div class="sliders-control">
-                <button></button>
-                <button></button>
-                <button></button>
+                <button class="slider-controls__button"></button>
+                <button class="slider-controls__button"></button>
+                <button class="slider-controls__button"></button>
             </div>
         </div>
     </div>
@@ -203,7 +209,7 @@
     </div>
 </footer>
 
-<section class="write-us">
+<section class="write-us ">
     <h2>Напишите нам</h2>
     <form class="contacts-form" action="https://echo.htmlacademy.ru" method="post">
         <div class="modal-contacts-row">
@@ -218,22 +224,11 @@
         </div>
         <label for="text">Текст письма:</label>
         <textarea rows="6" id="text" placeholder="В свободной форме" required></textarea>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button button-submit" type="submit">Отправить</button>
     </form>
     <button class="modal-close" type="button">Закрыть</button>
 </section>
 
-<script>
-  let form = document.querySelector(".form-button");
-  let writeus = document.querySelector(".write-us");
-  let modalclose =document.querySelector(".modal-close")
-  form.addEventListener("click", function () {
-    writeus.style.display = 'block';
-  })
-
-  modalclose.addEventListener("click", function () {
-    writeus.style.display = 'none';
-  })
-</script>
+<script src="script/script.js"></script>
 </body>
 </html>

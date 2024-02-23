@@ -334,23 +334,12 @@
             </p>
         </div>
         <label for="text">Текст письма:</label>
-        <textarea rows="6" id="text" placeholder="В свободной форме" required></textarea>
+        <textarea class="text-area-name" rows="6" id="text" placeholder="В свободной форме" required></textarea>
         <button class="button" type="submit">Отправить</button>
     </form>
     <button class="modal-close" type="button">Закрыть</button>
 </section>
 
-<script>
-	let form = document.querySelector(".form-button");
-	let writeus = document.querySelector(".write-us");
-	let modalclose = document.querySelector(".modal-close")
-	form.addEventListener("click", function () {
-		writeus.style.display = 'block';
-	})
-
-	modalclose.addEventListener("click", function () {
-		writeus.style.display = 'none';
-	})
-</script>
+<script src="script/script.js"></script>
 </body>
 </html>
