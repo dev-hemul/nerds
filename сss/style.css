@@ -638,6 +638,10 @@ img {
     justify-content: space-between;
 }
 
+.main-footer {
+    padding-bottom: 70px;
+}
+
 .main-filters {
     width: 260px;
 }
@@ -1092,7 +1096,6 @@ form .button:active {
 .write-us {
     position: fixed;
     top: 50%;
-    left: 50%;
     width: 960px;
     transform: translate(-50%, -50%);
     padding: 65px 100px 85px;
@@ -1100,21 +1103,16 @@ form .button:active {
     z-index: 100;
     box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
     box-sizing: border-box;
-    animation-name: bounce-hide;
-    animation-duration: 1s;
+    transition: left 0.5s linear;
 }
 
 .write-us-show {
-    display: block;
-    animation-name: bounce;
-    animation-duration: 1s;
+    left: 50%;
 
 }
 
 .write-us-hide {
-    display: none;
-    animation-name: bounce-hide;
-    animation-duration: 1s;
+    left: -100%;
 }
 
 .write-us h2 {
@@ -1253,27 +1251,10 @@ form .button:active {
 
 /*Key frames animation*/
 
-@keyframes bounce {
-    from { left: 0; }
-    to { left: 50%; }
-  }
-
-@keyframes bounce-hide {
-    from {left: 50%;}
-    to { left: -200%;}
-  }
-
-
 @keyframes hide {
     from {opacity: 0}
     to {opacity: 1}
 }
-
-/*@keyframes down {*/
-/*    30% {transform: translateY(-1000px);}*/
-/*    50% {transform: translateY(-500px);}*/
-/*    90% {transform: translateY(0);}*/
-/*}*/
 
 
 
